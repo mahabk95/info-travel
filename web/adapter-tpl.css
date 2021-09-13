@@ -1,0 +1,92 @@
+ 
+
+ #logo {
+            float: left;
+            width: 120px;
+            margin: 2px 0px 10px 0px!important;
+        }
+        a {
+            color: #fff!important;;
+            color: #1366ad!important;;
+            /*color: #d39e00!important;;*/
+            /*font-weight: bolder;*/
+        }
+        /*border-top: 1px solid #d39e00;!**!*/
+        .nav-tabs .nav-link.active {
+            color: #ffffff!important;
+            font-weight: bolder;
+            background-color: #1a9750!important;
+            background-color: #1c62a9!important;
+            background-color: #2058c7!important;
+            background-color: #d39e00!important;
+            border-top: 2px solid #28a745;
+            border-left: 2px solid #28a745;
+            border-right: 2px solid #28a745;
+            border-top: 1px solid #1e7e34;
+            border-left: 1px solid #1e7e34;
+            border-right: 1px solid #1e7e34;
+            /*border-color: #1c62a9 #2f82d6 #1c62a9!important;*/
+            /*border-color: #28a745 #28a745 #fff #28a745!important;*/
+        }
+        .nav-item {
+            margin-bottom: -2px!important;
+        }
+        body {
+            /*padding-top: 20px;*/
+            padding-bottom: 20px;
+            font-family: 'Droid Arabic Kufi'!important;
+            color: #666;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .inactive{
+            opacity: .65;
+        }
+        .adapte-card-header{
+            padding: 3px 0px 0px 5px!important;font-size: 12px;border-bottom:0px
+        }
+
+ .content-box table thead td, .content-box table thead th, .content-box table th {
+    padding: 3px!important;
+     color: #fff!important;
+     font-weight: 700!important;
+     /*border-right: 1px solid #fff;*/
+     vertical-align: top!important;
+     background: #0C7DB5!important;
+     text-align: center!important;
+ }
+
+ .content-box table tbody tr th, .content-box table tbody tr td {
+     border-right: 1px solid #FFF!important;
+     padding: 0.5em!important;
+     padding: 5px!important;
+ }
+#origin{
+    display: inline-flex;
+    text-transform: lowercase!important;
+}
+ #destination{
+     display: inline-flex;
+     /*flex-;*/
+     justify-content: space-between;
+     text-transform: lowercase!important;
+ }
+
+ @media screen and (max-width: 767px) {
+     span
+     {
+         font-size: 12px;
+     }
+
+ }
+ /*.capitalise {*/
+     /*text-transform:capitalize;*/
+ /*}*/
+ /*.lowercase {*/
+     /*text-transform:lowercase;*/
+ /*}*/
+
+ .link { text-transform: lowercase; }
+ .link:first-letter { text-transform: uppercase; }

@@ -24,7 +24,7 @@ class HorairesLigne extends MySQL {
     {
         $this->id = $id;
         $this->direction = $direction;
-        $this->heureDepart = $heureDepart;
+        $this->heureDepart[] = $heureDepart;
         $this->heureArrivee = $heureArrivee;
         $this->numeroDepart = $numeroDepart;
         $this->regim_hebdomadeur_id = $regim_hebdomadeur_id;
@@ -182,19 +182,27 @@ class HorairesLigne extends MySQL {
 
 
 
-    public function getHorairesLigne($ligneId) {
-        $ligneId = $this->id;
+    public function getHorairesLigneByLineId($ligneId) {
+
         $dbh = MySQL::getInstance();
-        $sql = "SELECT * FROM horaires_lignes WHERE id  = $ligneId";
+        $sql = "SELECT * FROM horaires_lignes WHERE ligne_id  = $ligneId";
         $stmt =$dbh->prepare($sql);
         $stmt->fetchObject(__CLASS__);
         $stmt->execute();
+        $horairesLignes = [];
+        foreach ($stmt as $HL) {
 
-        foreach ($stmt as $d) {
+             $horairesLignes['id'][] = $HL['id'];
+            $horairesLignes['direction'] = $HL['direction'];
+            $horairesLignes['heure_depart'][] = $HL['heure_depart'];
+            $horairesLignes['heure_arrive'][] = $HL['heure_arrive'];
+            $horairesLignes['numero_depart'][] = $HL['numero_depart'];
+            $horairesLignes['regim_hebdomadeur_id'] = $HL['regim_hebdomadeur_id'];
+            $horairesLignes['ligne_id'] = $HL['ligne_id'];
+            $horairesLignes['programme_saisonaire_id'] = $HL['programme_saisonaire_id'];
 
-             $depot = new HorairesLigne($d['id'],$d['label']);
-            return $depot;
         }
+        return $horairesLignes;
 
 
     }
@@ -239,7 +247,7 @@ class HorairesLigne extends MySQL {
         $dbh = MySQL::getInstance();
         $requete_insert = "INSERT INTO  horaires_lignes ( `direction`, `heure_depart`, `heure_arrive`, `numero_depart`,`ligne_id`, `regim_hebdomadeur_id`, `programme_saisonaire_id` ) VALUES (:direction, :heure_depart, :heure_arrive, :numero_depart,:ligne_id, :regim_hebdomadeur_id, :programme_saisonaire_id )";
         $stmt = $dbh->prepare($requete_insert);
-        var_dump($this);
+
         $stmt->bindParam(':direction', $this->direction);
         $stmt->bindParam(':heure_depart', $this->heureDepart);
         $stmt->bindParam(':heure_arrive', $this->heureArrivee);

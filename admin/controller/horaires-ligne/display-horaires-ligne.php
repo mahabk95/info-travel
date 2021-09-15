@@ -1,8 +1,22 @@
 <?php
 
+$passport = true;
+if(isset($_GET['id']) && !empty($_GET['id'])){
+    $ligne_id = $_GET['id'];
+}
+else{
+    $passport = false;
+}
+$ligne = (new Ligne($ligne_id))->getLigne();
+$horairesLigne = (new HorairesLigne())->getHorairesLigneByLineId($ligne_id);
 
-$idhor_ligne = $_GET['id'];
-$hor_ligne = (new hor_ligne($idhor_ligne))->getDepot();
+$programmeSaison = (new prog_saisonaire($horairesLigne['programme_saisonaire_id']))->getProgrammeSaison();
+$regimHebdo = (new RegimHebdo($horairesLigne['regim_hebdomadeur_id']))->getRegimHebdo();
+
+
+$stationDepart  = (new Station($ligne->getStationDepartId()))->getStation();
+$stationArrivee = (new Station($ligne->getStationArriveeId()))->getStation();
+
 include 'vues/horaires-ligne/display-horaires-ligne-vues.php';
 
 

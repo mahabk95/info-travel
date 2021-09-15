@@ -34,11 +34,11 @@
               <li class="nav-item active">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paramétrages</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="http://localhost/info-travel/index.php?article=depot&action=liste">Dépot</a>
-                      <a class="dropdown-item" href="http://localhost/info-travel/index.php?article=ligne&action=liste">Lignes</a>
-                      <a class="dropdown-item" href="http://localhost/info-travel/index.php?article=regim-hebdomadaire&action=liste">Regime hébdomadaires</a>
-                      <a class="dropdown-item" href="http://localhost/info-travel/index.php?article=programme-saisonaire&action=liste">Programmes saisionnaires</a>
-                      <a class="dropdown-item" href="http://localhost/info-travel/index.php?article=station&action=liste">Stations</a>
+                      <a class="dropdown-item" href="http://localhost/info-travel/admin/index.php?article=depot&action=liste">Dépot</a>
+                      <a class="dropdown-item" href="http://localhost/info-travel/admin/index.php?article=ligne&action=liste">Lignes</a>
+                      <a class="dropdown-item" href="http://localhost/info-travel/admin/index.php?article=regim-hebdomadaire&action=liste">Regime hébdomadaires</a>
+                      <a class="dropdown-item" href="http://localhost/info-travel/admin/index.php?article=programme-saisonaire&action=liste">Programmes saisionnaires</a>
+                      <a class="dropdown-item" href="http://localhost/info-travel/admin/index.php?article=station&action=liste">Stations</a>
                   </div>
               </li>
 
@@ -46,9 +46,7 @@
               <li class="nav-item active">
                   <a class="nav-link" href="index.php?article=ligne&action=liste">Gestion des Horaires <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link disabled" href="https://getbootstrap.com/docs/4.0/examples/navbar-static/#">Disabled</a>
-              </li>
+
           </ul>
 
       </div>

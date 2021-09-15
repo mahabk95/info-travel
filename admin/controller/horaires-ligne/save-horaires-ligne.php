@@ -41,7 +41,7 @@ if(isset($_POST['direction_id']) && !empty($_POST['direction_id'])){
 else{
     $passport = false;
 }
-$lineId = 6;
+
 //var_dump($heuresDepart);
 
 
@@ -55,12 +55,12 @@ foreach ($heuresDepart as $k => $hd){
 
     $horairesLine->save();
 }
-die;
 
 
 
-$urlListe = Url::generateUrl('hor_ligne', 'liste');
-Message::getMessage($urlListe, "les données ont été enregistrer avec success")
+
+$urlDisplay = Url::generateUrl('horaires-ligne', 'display');
+Message::getMessage($urlDisplay."&id=".$lineId, "les données ont été enregistrer avec success");
 
 
 
